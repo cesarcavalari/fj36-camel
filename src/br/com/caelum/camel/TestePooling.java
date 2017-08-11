@@ -61,7 +61,7 @@ public class TestePooling {
 						inbound.setHeader("nomeAutor", nomeAutor);
 					}
 				})
-				.setBody(simple("insert into Livros (nomeAutor) values (':?nomeAutor')"))
+				.setBody(simple("insert into Livros (nomeAutor) values (:?nomeAutor)"))
 				.to("jdbc:mysqlDataSource?useHeadersAsParameters=true");
 			}			
 		});
